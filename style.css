@@ -4,3 +4,28 @@ td {
     height: 50px;
     text-align: center;
 }
+
+#redstart {
+    background-color: red;
+}
+
+#bluestart {
+    background-color: blue;
+}
+
+#yellowstart {
+    background-color: yellow;
+}
+
+#greenstart {
+    background-color: green;
+}
+
+table {
+    margin: auto;
+}
+
+input {
+    display: block;
+    margin: 10px auto;
+}
