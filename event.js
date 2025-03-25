@@ -4,8 +4,8 @@ const h1 = document.createElement("h1")
 var dobhat = false
 var szinek = []
 var uhhfennvane = []
-var jatekosok = parseInt(document.querySelector("#jatekosok").value)
 var i = 0
+var mivan
 
 function random(a, f) {
     return Math.floor(Math.random()*(f-a+1))+a;
@@ -29,31 +29,26 @@ function dob() {
         }
         console.log(szinek[i])
         i++
-        if (i > jatekosok || szinek[i]=="") i = 0
+        if (i > mivan-1 || szinek[i]=="") i = 0
     }
 }
 
 // na ez vajon miért nem működik </3
 
-function nenezzide() {
+function nenezzide(jatekosok) {
     szinek.push("red")
     szinek.push("blue")
-    if (jatekosok == 3) szinek.push("yellow")
-    else if (jatekosok == 4) {
-        szinek.push("yellow")
-        szinek.push("green")
-    } else {
-        szinek.push("")
-        szinek.push("")
-    }
+    if (jatekosok > 2) szinek.push("yellow")
+    if (jatekosok == 4) szinek.push("green")
     for (let j = 0; j < jatekosok;j++) {
         uhhfennvane.push(false)
     }
-    jatekosok.innerHTML = ""
 }
 
 function kezd() {
-    nenezzide()
+    var jatekosok = parseInt(document.querySelector("#jatekosok").value)
+    nenezzide(jatekosok)
     huha()
     dobhat = true
+    mivan = jatekosok
 }
