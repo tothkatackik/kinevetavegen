@@ -20,16 +20,27 @@ function huha() {
 // és a szín mellé egy bool???? hogy van e a tablan mert szivem szerint nem szenvednek azzal hogy tobb legyen a tablan egy szinbol mert kicsi nagyon
 // TALÁN valamit varázsolok otthon ezen a héten de az se biztos még
 
+function ezeketvajonhogykellswitchelni() {
+    
+}
+
+function felrak(szin) {
+    var babuk = document.querySelectorAll(`.${szin}`)
+    var start = document.querySelector(`#${szin}start`)
+    ezeketvajonhogykellswitchelni()
+}
+
 function dob() {
     if (dobhat) {
         dobas = random(1, 6)
         console.log(dobas)
         if (!uhhfennvane[i] && dobas == 6) {
-            console.log("hohooo")
+            felrak(szinek[i])
+            uhhfennvane[i]=true
         }
         console.log(szinek[i])
         i++
-        if (i > mivan-1 || szinek[i]=="") i = 0
+        if (i > mivan-1) i = 0
     }
 }
 
