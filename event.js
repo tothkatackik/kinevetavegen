@@ -16,9 +16,13 @@ function huha() {
     div.appendChild(p)
 }
 
-// lehet hogy ugy kene hogy itt felül ^ a pbe ugy rakjuk bele hogy dictionaryvel ha van ilyen itt (megintcsak nem tudok programozni ezért nem tudok ilyeneket)
-// és a szín mellé egy bool???? hogy van e a tablan mert szivem szerint nem szenvednek azzal hogy tobb legyen a tablan egy szinbol mert kicsi nagyon
-// TALÁN valamit varázsolok otthon ezen a héten de az se biztos még
+// amugy lehet ezt ugy kene hogy egyik unalmas ejszakamon fogom magam es kiirom az elemeket egy tombbe es ugy switchelgetek
+// mert ugy talan konnyebb lenne es akkor konnyebb megoldani amikor egymasra lepnek hogy kiesnek
+// uuuu mekkora genius vagyok azta (majd ezek a kommentek ki fognak kerulni a vegen esku)
+// wait lehet hogy ez nem jo otlet mert hogy oldom meg mind a 4re....
+// most igazabol csak elmelkedek mert programmers blockom van (writers block csak programozasbol 🤭)
+// varj szerintem lehet olyat hogy a tdket rakom bele a tombbe es ooooooooooooooooooo
+// na majd lesz valami zsoltika meglesz ez
 
 function ezeketvajonhogykellswitchelni() {
     
@@ -26,8 +30,12 @@ function ezeketvajonhogykellswitchelni() {
 
 function felrak(szin) {
     var babuk = document.querySelectorAll(`.${szin}`)
+    var uhh = 0;
+    for (var e=0; e<babuk.length; e++) {
+        if (babuk.innerText=="x") uhh++
+    }
     var start = document.querySelector(`#${szin}start`)
-    ezeketvajonhogykellswitchelni()
+    ezeketvajonhogykellswitchelni(babuk[uhh], start)
 }
 
 function dob() {
