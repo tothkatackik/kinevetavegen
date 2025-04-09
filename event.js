@@ -3,7 +3,6 @@ const p = document.createElement("p")
 const h1 = document.createElement("h1")
 var dobhat = false
 var szinek = []
-var uhhfennvane = []
 var i = 0
 var mivan
 
@@ -22,29 +21,27 @@ function huha() {
 // wait lehet hogy ez nem jo otlet mert hogy oldom meg mind a 4re....
 // most igazabol csak elmelkedek mert programmers blockom van (writers block csak programozasbol 🤭)
 // varj szerintem lehet olyat hogy a tdket rakom bele a tombbe es ooooooooooooooooooo
-// na majd lesz valami zsoltika meglesz ez
+// na majd lesz valami zsolesz meglesz ez
 
-function ezeketvajonhogykellswitchelni() {
-    
+function lep(aaa) {
+
 }
 
 function felrak(szin) {
     var babuk = document.querySelectorAll(`.${szin}`)
-    var uhh = 0;
-    for (var e=0; e<babuk.length; e++) {
-        if (babuk.innerText=="x") uhh++
-    }
-    var start = document.querySelector(`#${szin}start`)
-    ezeketvajonhogykellswitchelni(babuk[uhh], start)
+    babuk.forEach(element => {
+        element.addEventListener("click", function () {
+            lep(this)
+        })
+    });
 }
 
 function dob() {
     if (dobhat) {
         dobas = random(1, 6)
         console.log(dobas)
-        if (!uhhfennvane[i] && dobas == 6) {
+        if ( dobas == 6) {
             felrak(szinek[i])
-            uhhfennvane[i]=true
         }
         console.log(szinek[i])
         i++
@@ -52,16 +49,11 @@ function dob() {
     }
 }
 
-// na ez vajon miért nem működik </3
-
 function nenezzide(jatekosok) {
     szinek.push("red")
     szinek.push("blue")
     if (jatekosok > 2) szinek.push("yellow")
     if (jatekosok == 4) szinek.push("green")
-    for (let j = 0; j < jatekosok;j++) {
-        uhhfennvane.push(false)
-    }
 }
 
 function kezd() {
