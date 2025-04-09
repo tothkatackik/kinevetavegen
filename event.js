@@ -1,6 +1,10 @@
 const div = document.querySelector("div")
 const p = document.createElement("p")
 const h1 = document.createElement("h1")
+var redpositions = []
+var bluepositions = []
+var yellowpositions = []
+var greenpositions = []
 var dobhat = false
 var szinek = []
 var i = 0
@@ -14,14 +18,6 @@ function huha() {
     p.innerText = "nem tudok programozni aaaa"
     div.appendChild(p)
 }
-
-// amugy lehet ezt ugy kene hogy egyik unalmas ejszakamon fogom magam es kiirom az elemeket egy tombbe es ugy switchelgetek
-// mert ugy talan konnyebb lenne es akkor konnyebb megoldani amikor egymasra lepnek hogy kiesnek
-// uuuu mekkora genius vagyok azta (majd ezek a kommentek ki fognak kerulni a vegen esku)
-// wait lehet hogy ez nem jo otlet mert hogy oldom meg mind a 4re....
-// most igazabol csak elmelkedek mert programmers blockom van (writers block csak programozasbol 🤭)
-// varj szerintem lehet olyat hogy a tdket rakom bele a tombbe es ooooooooooooooooooo
-// na majd lesz valami zsolesz meglesz ez
 
 function lep(aaa) {
 
@@ -51,9 +47,17 @@ function dob() {
 
 function nenezzide(jatekosok) {
     szinek.push("red")
+    redpositions = [[0,0], [0,1], [1, 0], 1,1]
     szinek.push("blue")
-    if (jatekosok > 2) szinek.push("yellow")
-    if (jatekosok == 4) szinek.push("green")
+    bluepositions = [[0, 10], [0, 11], [1, 10], [1,11]]
+    if (jatekosok > 2) {
+        szinek.push("yellow")
+        yellowpositions = [[10, 0], [10, 1], [11, 0], [11, 1]]
+    }
+    if (jatekosok == 4) {
+        szinek.push("green")
+        greenpositions = [[10, 10], [10, 11], [11, 10], [11, 11]]
+    }
 }
 
 function kezd() {
