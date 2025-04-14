@@ -15,11 +15,6 @@ function random(a, f) {
     return Math.floor(Math.random()*(f-a+1))+a;
 }
 
-function huha() {
-    p.innerText = "nem tudok programozni aaaa"
-    div.appendChild(p)
-}
-
 function felrak(szin) {
     var babuk = document.querySelectorAll(`.${szin}`)
     babuk.forEach(element => {
@@ -61,12 +56,12 @@ function nenezzide(jatekosok) {
         [9,8], [9,7], [9,6], [9,5], [9,4], [9,3], [9,2],
         [8,2], [7,2], [6,2], [5,2], [4,2], [3,2]
     ]
+    // tippem nincs hogyan kéne...
 }
 
 function kezd() {
     var jatekosok = parseInt(document.querySelector("#jatekosok").value)
     nenezzide(jatekosok)
-    huha()
     dobhat = true
     mivan = jatekosok
 }
