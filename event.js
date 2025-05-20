@@ -24,6 +24,7 @@ function scoobydoo(x) {
     var cucc = document.querySelectorAll(`.${szinek[i]}finish`)
     cucc[beerkeztek[i]].innerText = x.innerText
     x.innerText = "x"
+    ennyitleptek[i] = 0
 }
 
 function csere(meow) {
