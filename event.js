@@ -7,23 +7,35 @@ var i = -1
 var mivan
 var palya = []
 var palyapoziciok = [
-    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
-    [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 0, 1, 2, 3, 4, 5, 6],
-    [21, 22, 23, 24, 25, 26, 27, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-    [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 0],
+    [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 0, 1, 2, 3, 4, 5, 6, 7],
+    [21, 22, 23, 24, 25, 26, 27, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+    [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 ]
 var ennyitleptek = [0, 0, 0, 0]
 var vanapalyan = [false, false, false, false]
+var beerkeztek = [0, 0, 0, 0]
 
 function random(a, f) {
     return Math.floor(Math.random()*(f-a+1))+a;
 }
 
+function scoobydoo(x) {
+    var cucc = document.querySelectorAll(`.${szinek[i]}finish`)
+    cucc[beerkeztek[i]].innerText = x.innerText
+    x.innerText = "x"
+}
+
 function csere(meow) {
-    let s = palya[palyapoziciok[i][ennyitleptek[i]]].innerText
-    palya[palyapoziciok[i][ennyitleptek[i]]].innerText = palya[palyapoziciok[i][(ennyitleptek[i]+meow)]].innerText
-    palya[palyapoziciok[i][(ennyitleptek[i]+meow)]].innerText = s
-    ennyitleptek[i] += meow
+    if (ennyitleptek[i]+meow<29){
+        let s = palya[palyapoziciok[i][ennyitleptek[i]]].innerText
+        palya[palyapoziciok[i][ennyitleptek[i]]].innerText = palya[palyapoziciok[i][(ennyitleptek[i]+meow)]].innerText
+        palya[palyapoziciok[i][(ennyitleptek[i]+meow)]].innerText = s
+        ennyitleptek[i] += meow
+        if (ennyitleptek[i]==28) {
+            scoobydoo(palya[palyapoziciok[i][ennyitleptek[i]]])
+        }
+    }
 }
 
 function lep(a) {
