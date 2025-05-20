@@ -5,6 +5,7 @@ var dobhat = false
 var szinek = []
 var i = 0
 var mivan
+var palya
 
 function random(a, f) {
     return Math.floor(Math.random()*(f-a+1))+a;
@@ -15,8 +16,8 @@ function huha() {
     div.appendChild(p)
 }
 
-function lep(aaa) {
-
+function lep(a) {
+    
 }
 
 function felrak(szin) {
@@ -46,6 +47,9 @@ function nenezzide(jatekosok) {
     szinek.push("blue")
     if (jatekosok > 2) szinek.push("yellow")
     if (jatekosok == 4) szinek.push("green")
+    for (let i = 0; i < 28; i++) {
+        palya.push(document.getElementById(`m${i}`))
+    }
 }
 
 function kezd() {
