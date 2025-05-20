@@ -3,7 +3,7 @@ const p = document.createElement("p")
 const h1 = document.createElement("h1")
 var dobhat = false
 var szinek = []
-var i = 0
+var i = -1
 var mivan
 var palya = []
 var palyapoziciok = [
@@ -19,15 +19,17 @@ function random(a, f) {
     return Math.floor(Math.random()*(f-a+1))+a;
 }
 
-function huha() {
-    p.innerText = "nem tudok programozni aaaa"
-    div.appendChild(p)
+function csere(meow) {
+    let s = palya[palyapoziciok[i][ennyitleptek[i]]].innerText
+    palya[palyapoziciok[i][ennyitleptek[i]]].innerText = palya[palyapoziciok[i][(ennyitleptek[i]+meow)]].innerText
+    palya[palyapoziciok[i][(ennyitleptek[i]+meow)]].innerText = s
+    ennyitleptek[i] += meow
 }
 
 function lep(a) {
     let s = a.innerText
-    a. innerText = palya[palyapoziciok[i][ennyitleptek[i]]].innerText
-    palya[palyapoziciok[i][ennyitleptek[i]]].innerText = s
+    a. innerText = palya[palyapoziciok[i][0]].innerText
+    palya[palyapoziciok[i][0]].innerText = s
 }
 
 function felrak(szin) {
@@ -42,14 +44,16 @@ function felrak(szin) {
 
 function dob() {
     if (dobhat) {
-        dobas = random(1, 6)
-        console.log(dobas)
-        if (dobas == 6 || vanapalyan[i]) {
-            felrak(szinek[i])
-        }
-        console.log(szinek[i])
         i++
         if (i > mivan-1) i = 0
+        let dobas = random(1, 6)
+        console.log(dobas)
+        if (dobas == 6) {
+            felrak(szinek[i])
+        } else if (vanapalyan[i]) {
+            csere(dobas)
+        }
+        console.log(szinek[i])
     }
 }
 
@@ -66,7 +70,6 @@ function nenezzide(jatekosok) {
 function kezd() {
     var jatekosok = parseInt(document.querySelector("#jatekosok").value)
     nenezzide(jatekosok)
-    huha()
     dobhat = true
     mivan = jatekosok
 }
